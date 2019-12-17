@@ -1,0 +1,31 @@
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>S.NO</td>
+        <td>NAME</td>
+        <td>ID</td>
+        <td>EMAIL</td>
+        <td>PASSWORD</td>
+        <td>ACTIONS</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of listData;index as i">
+        <td>{{i+1}}</td>
+        <td>{{list.name}}</td>
+        <td>{{list.id}}</td>
+        <td>{{list.email}}</td>
+        <td>{{list.password}}</td>
+        <td>
+          <input type="button" class="btn btn-secondary" value="Edit" (click)="edit(list)">&nbsp;&nbsp;
+          <input type="button" class="btn btn-warning" value="Delete" (click)="delete(i)">
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-center">
+  <a routerLink='/' class="btn btn-success">Go to register page</a>
+</div>
