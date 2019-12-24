@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import 'grapesjs-plugin-forms';
 import grapesjs from 'grapesjs';
 import 'grapesjs-blocks-basic';
-// import 'grapesjs-preset-webpage';
+
 
 
 
@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
   editor;
 
 
-  constructor() { }
+
+constructor() { }
+
   ngOnInit() {
     this.editor = grapesjs.init({
       container: '#gjs',
@@ -26,14 +28,15 @@ export class AppComponent implements OnInit {
       navbar: 'true',
       formsOpts	:'false',
       countdown: 'true',
+      canvas: {
+
+        styles: ['https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css']
+        },
       storageManager: { type: null },
       components: '',
-      plugins: [ 'gjs-blocks-basic','grapesjs-plugin-forms']
+      plugins: [ 'gjs-blocks-basic', 'grapesjs-plugin-forms'],
+    });
+  }
 
-
-
-       });
-      }
 }
-
 
